@@ -9,5 +9,10 @@
   <color name="white">#FFFFFFFF</color>
   <color name="profilesectionbackground">#24252C</color>
   <color name="background">#FF151617</color>
+<<<<<<< HEAD
+  <color name="SearchContainerColor">#F8F8F8</color>
+  <color name="SearchHintColor">#C4C4C4</color>
+=======
+>>>>>>> main
 
 </resources>

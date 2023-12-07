@@ -13,6 +13,10 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import com.example.bostatask.ui.theme.BostaTaskTheme
+<<<<<<< HEAD
+import com.example.bostatask.ui.theme.screens.AlbumDetailScreen
+=======
+>>>>>>> main
 import com.example.bostatask.ui.theme.screens.ProfileScreen
 
 class MainActivity : ComponentActivity() {
