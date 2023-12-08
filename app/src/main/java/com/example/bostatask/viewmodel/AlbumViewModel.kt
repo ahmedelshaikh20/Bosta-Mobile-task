@@ -16,9 +16,13 @@ class AlbumViewModel @Inject constructor(private val albumRepository: AlbumRepos
   ViewModel() {
 
 
+
   private var _photos = MutableStateFlow(listOf<PhotosApiResponseItem>())
   val photos = _photos.asStateFlow()
   private var _currentAlbumPhotos = listOf<PhotosApiResponseItem>()
+
+  private var _photoLoaded = MutableStateFlow<Boolean>(false)
+  val photoLoaded = _photoLoaded.asStateFlow()
 
   fun updatePhotoBasedOnSearch(query: String) {
     val selectedPhotos = _currentAlbumPhotos.filter { photo ->
@@ -31,6 +35,9 @@ class AlbumViewModel @Inject constructor(private val albumRepository: AlbumRepos
   }
 
   fun getPhotosById(albumId: Int?) {
+    _photos.update {
+      listOf()
+    }
     viewModelScope.launch {
       if (albumId != null) {
         val photoApiResponse = albumRepository.getPhotoByAlbumId(albumId)
@@ -39,6 +46,7 @@ class AlbumViewModel @Inject constructor(private val albumRepository: AlbumRepos
           _photos.update {
             _currentAlbumPhotos
           }
+          _photoLoaded.value = true
         }
       }
     }

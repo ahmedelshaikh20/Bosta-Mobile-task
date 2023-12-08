@@ -1,5 +1,6 @@
 package com.example.bostatask.api
 
+import com.example.bostatask.utils.Constants
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

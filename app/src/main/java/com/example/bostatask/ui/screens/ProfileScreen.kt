@@ -20,7 +20,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
@@ -51,8 +50,7 @@ fun ProfileScreen(navController: NavController ,profileViewModel: ProfileViewMod
     profileSection(
       modifier = Modifier
         .padding(horizontal = 10.dp, vertical = 10.dp)
-        .clip(RoundedCornerShape(10.dp))
-        .shadow(elevation = 36.dp, spotColor = Color(0x30000000), ambientColor = Color(0x30000000)),
+        .clip(RoundedCornerShape(10.dp)),
       name = user?.name,
       address = user?.address?.city + user?.address?.street
     )

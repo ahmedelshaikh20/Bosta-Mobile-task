@@ -1,18 +1,22 @@
 package com.example.bostatask.ui.screens
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SearchBar
 import androidx.compose.material3.SearchBarDefaults
 import androidx.compose.material3.Text
@@ -23,6 +27,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment.Companion.CenterHorizontally
+import androidx.compose.ui.Alignment.Companion.Start
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -41,16 +47,17 @@ import java.nio.charset.StandardCharsets
 @Composable
 fun AlbumScreen(albumsId: Int?, navController: NavController, albumViewModel: AlbumViewModel= hiltViewModel()) {
   val photos by albumViewModel.photos.collectAsState()
-  LaunchedEffect(key1 =albumsId  ){
+  val loading by albumViewModel.photoLoaded.collectAsState()
+  LaunchedEffect(key1 =albumsId){
     albumViewModel.getPhotosById(albumsId)
   }
 
-  Column {
+  Column(modifier = Modifier,verticalArrangement = Arrangement.Center) {
 
-    searchBar(onQueryChange = {
+    searchBar(modifier = Modifier.align(Start),onQueryChange = {
       albumViewModel.updatePhotoBasedOnSearch(it)
     })
-// Then We do the grid here
+    if(loading){
     LazyVerticalGrid(
       columns = GridCells.Adaptive(minSize = 128.dp)
     ) {
@@ -61,6 +68,19 @@ fun AlbumScreen(albumsId: Int?, navController: NavController, albumViewModel: Al
         }, photo)
       }
     }
+    }else {
+      CircularProgressIndicator(
+        modifier = Modifier
+          .padding(top = 200.dp)
+          .width(64.dp)
+          .align(CenterHorizontally),
+        color = colorResource(id = R.color.background),
+        trackColor = MaterialTheme.colorScheme.surfaceVariant,
+      )
+    }
+
+
+
   }
 
 
@@ -97,7 +117,7 @@ fun searchBar(
     query = query,
     onQueryChange = { newQuery ->
       query = newQuery
-      onQueryChange(newQuery)
+      onQueryChange(newQuery.lowercase())
     },
     onSearch = {
 

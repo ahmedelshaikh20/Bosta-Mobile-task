@@ -1,4 +1,4 @@
-package com.example.bostatask.api
+package com.example.bostatask.utils
 
 class Constants {
 companion object{
