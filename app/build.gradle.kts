@@ -1,16 +1,14 @@
 plugins {
   id("com.android.application")
   id("org.jetbrains.kotlin.android")
+  id("kotlin-kapt")
+  id("com.google.dagger.hilt.android")
+
 }
 
 android {
-<<<<<<< HEAD
   namespace = "com.example.bostatask"
   compileSdk = 34
-=======
-    namespace = "com.example.bostatask"
-    compileSdk = 34
->>>>>>> main
 
   defaultConfig {
     applicationId = "com.example.bostatask"
@@ -34,11 +32,11 @@ android {
     }
   }
   compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
   }
   kotlinOptions {
-    jvmTarget = "1.8"
+    jvmTarget = "17"
   }
   buildFeatures {
     compose = true
@@ -76,4 +74,16 @@ dependencies {
   implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
   implementation ("androidx.lifecycle:lifecycle-extensions:2.2.0")
   implementation ("com.squareup.retrofit2:converter-gson:2.1.0")
+
+  implementation("io.coil-kt:coil-compose:2.5.0")
+
+//Hilt
+  implementation("com.google.dagger:hilt-android:2.44")
+  kapt("com.google.dagger:hilt-android-compiler:2.44")
+  implementation ("androidx.hilt:hilt-navigation-compose:1.1.0")
+
+
+  // For zomming
+  implementation ("net.engawapg.lib:zoomable:1.5.2")
+
 }

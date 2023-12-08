@@ -12,13 +12,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import com.example.bostatask.navigation.Navigation
 import com.example.bostatask.ui.theme.BostaTaskTheme
-<<<<<<< HEAD
-import com.example.bostatask.ui.theme.screens.AlbumDetailScreen
-=======
->>>>>>> main
-import com.example.bostatask.ui.theme.screens.ProfileScreen
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -39,7 +38,7 @@ class MainActivity : ComponentActivity() {
               .matchParentSize()
               .background(colorResource(id = R.color.background))
           )
-          ProfileScreen()
+          Navigation()
         }
       }
     }
