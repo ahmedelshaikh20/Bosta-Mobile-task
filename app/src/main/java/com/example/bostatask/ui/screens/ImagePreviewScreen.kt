@@ -1,4 +1,4 @@
-package com.example.bostatask.ui.theme.screens
+package com.example.bostatask.ui.screens
 
 import android.content.Context
 import android.content.Intent

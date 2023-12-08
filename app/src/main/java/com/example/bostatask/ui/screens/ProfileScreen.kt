@@ -1,4 +1,4 @@
-package com.example.bostatask.ui.theme.screens
+package com.example.bostatask.ui.screens
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -30,6 +30,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.bostatask.R
 import com.example.bostatask.navigation.Screen
@@ -42,7 +43,7 @@ val mulish = FontFamily(
 )
 
 @Composable
-fun ProfileScreen(navController: NavController ,profileViewModel: ProfileViewModel) {
+fun ProfileScreen(navController: NavController ,profileViewModel: ProfileViewModel= hiltViewModel()) {
   val user by profileViewModel.user.collectAsState()
   val albums by profileViewModel.albums.collectAsState()
 

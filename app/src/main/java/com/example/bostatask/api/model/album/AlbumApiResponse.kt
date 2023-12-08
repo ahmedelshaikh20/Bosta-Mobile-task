@@ -1,3 +1,3 @@
-package com.example.bostatask.model.album
+package com.example.bostatask.api.model.album
 
  class AlbumApiResponse : ArrayList<AlbumApiResponseItem>()

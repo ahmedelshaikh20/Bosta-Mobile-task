@@ -1,4 +1,4 @@
-package com.example.bostatask.model.user
+package com.example.bostatask.api.model.user
 
 data class Company(
     val bs: String,

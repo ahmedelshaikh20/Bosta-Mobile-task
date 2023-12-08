@@ -1,4 +1,4 @@
-package com.example.bostatask.model.album
+package com.example.bostatask.api.model.album
 
 data class AlbumApiResponseItem(
     val id: Int?,

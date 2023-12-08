@@ -1,3 +1,3 @@
-package com.example.bostatask.model.photos
+package com.example.bostatask.api.model.photos
 
 class PhotosApiResponse : ArrayList<PhotosApiResponseItem>()

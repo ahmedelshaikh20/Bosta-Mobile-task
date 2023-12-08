@@ -1,7 +1,7 @@
-package com.example.bostatask.model.user
+package com.example.bostatask.api.model.user
 
-import com.example.bostatask.model.user.Address
-import com.example.bostatask.model.user.Company
+import com.example.bostatask.api.model.user.Address
+import com.example.bostatask.api.model.user.Company
 
 data class UsersResponseItem(
   val address: Address,

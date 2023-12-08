@@ -1,3 +1,3 @@
-package com.example.bostatask.model.user
+package com.example.bostatask.api.model.user
 
  class UsersApiResponse:  ArrayList<UsersResponseItem>()

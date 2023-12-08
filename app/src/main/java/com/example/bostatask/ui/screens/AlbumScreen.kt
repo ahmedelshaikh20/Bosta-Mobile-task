@@ -1,4 +1,4 @@
-package com.example.bostatask.ui.theme.screens
+package com.example.bostatask.ui.screens
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -28,17 +28,18 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.example.bostatask.R
-import com.example.bostatask.model.photos.PhotosApiResponseItem
+import com.example.bostatask.api.model.photos.PhotosApiResponseItem
 import com.example.bostatask.navigation.Screen
 import com.example.bostatask.viewmodel.AlbumViewModel
 import java.net.URLEncoder
 import java.nio.charset.StandardCharsets
 
 @Composable
-fun AlbumScreen(albumsId: Int?, navController: NavController, albumViewModel: AlbumViewModel) {
+fun AlbumScreen(albumsId: Int?, navController: NavController, albumViewModel: AlbumViewModel= hiltViewModel()) {
   val photos by albumViewModel.photos.collectAsState()
   LaunchedEffect(key1 =albumsId  ){
     albumViewModel.getPhotosById(albumsId)

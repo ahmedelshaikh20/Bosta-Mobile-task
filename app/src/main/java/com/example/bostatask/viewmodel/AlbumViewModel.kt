@@ -1,10 +1,9 @@
 package com.example.bostatask.viewmodel
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.example.bostatask.api.AppRepository
-import com.example.bostatask.model.photos.PhotosApiResponseItem
+import com.example.bostatask.api.model.photos.PhotosApiResponseItem
+import com.example.bostatask.repositry.AlbumRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -13,7 +12,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class AlbumViewModel @Inject constructor(private val appRepository: AppRepository) : ViewModel() {
+class AlbumViewModel @Inject constructor(private val albumRepository: AlbumRepository) :
+  ViewModel() {
 
 
   private var _photos = MutableStateFlow(listOf<PhotosApiResponseItem>())
@@ -33,7 +33,7 @@ class AlbumViewModel @Inject constructor(private val appRepository: AppRepositor
   fun getPhotosById(albumId: Int?) {
     viewModelScope.launch {
       if (albumId != null) {
-        val photoApiResponse = appRepository.getPhotoByAlbumId(albumId)
+        val photoApiResponse = albumRepository.getPhotoByAlbumId(albumId)
         if (photoApiResponse != null) {
           _currentAlbumPhotos = photoApiResponse
           _photos.update {
@@ -47,11 +47,3 @@ class AlbumViewModel @Inject constructor(private val appRepository: AppRepositor
 
 }
 
-// This allows us to pass appRepo to our viewModel
-@Suppress("UNCHECKED_CAST")
-class TasksViewModelFactory(
-  private val appRepository: AppRepository
-) : ViewModelProvider.NewInstanceFactory() {
-  override fun <T : ViewModel> create(modelClass: Class<T>) =
-    (AlbumViewModel(appRepository) as T)
-}
