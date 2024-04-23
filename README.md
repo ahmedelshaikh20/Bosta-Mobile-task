@@ -22,11 +22,11 @@ Android Coding Task For Bosta Company | Position: Android Engineer
 
 ## Screenshots
 
-|                  Main Screen                      |                Search Screen                       |                     
-|:-------------------------------------------------:|:--------------------------------------------------:|
-|     ![Main Screen](images/MainScreen.png)         |         ![Search](images/SearchScreen.png)         |
-|                  Share Screen                     |              Bosta Task Description                |
-|        ![Share](images/ShareScreen.png)           |        ![Task](images/UpdatedAndroidTask.png)      |                  
+|                   Main Screen                        |                   Search Screen                    |                     
+|:----------------------------------------------------:|:--------------------------------------------------:|
+|     ![Main Screen](images/MainScreen.png)            |         ![Search](images/SearchScreen.png)         |
+|                  Share Screen                        |              Bosta Task Description                |
+|        ![Share](images/ShareScreen.png)              |        ![Task](images/UpdatedAndroidTask.png)      |                  
    
 
 
