@@ -19,11 +19,7 @@ Android Coding Task For Bosta Company | Position: Android Engineer
 - <b>Retrofit:</b> Used fetch info from server.
 
 
-## Task Description 
 
-|                   Task Screen                        |                     
-|:----------------------------------------------------:|
-|        ![Task](images/UpdatedAndroidTask.png)        |   
 
 ## Screenshots
 
@@ -33,11 +29,14 @@ Android Coding Task For Bosta Company | Position: Android Engineer
 |                  Share Screen                        |  
 |        ![Share](images/ShareScreen.png)              |                     
    
+## Task Description 
+
+|                   Task Description                   |                     
+|:----------------------------------------------------:|
+|        ![Task](images/UpdatedAndroidTask.png)        |   
+
 
 ## Demo
-
-
-
 [Demo](https://github.com/ahmedelshaikh20/bosta-task/assets/61388151/5069808f-e6a7-469c-a32b-a4d16cab5e81)
 
 
