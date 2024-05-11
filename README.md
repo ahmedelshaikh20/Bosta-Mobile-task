@@ -1,5 +1,3 @@
-## Note: Don't Copy I got rejected for that task :) 
-
 # BostaTask
 
 <p align="center">
